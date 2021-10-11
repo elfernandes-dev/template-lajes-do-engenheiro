@@ -5,6 +5,11 @@ $colorTextLight: #e3e3e3;
 $colorHover: #92a3bd;
 $backgroundDark: #242424;
 $backgroundLight: #f7f7f7;
+%base {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 body {
     margin: 0;
@@ -12,11 +17,9 @@ body {
     box-sizing: border-box;
     font-family: 'Verdana', sans-serif;
     header {
-        max-width: 100%;
+        @extend %base;
         height: 60px;
         background-color: #000;
-        display: flex;
-        justify-content: center;
         .menu {
             width: 90%;
             height: 100%;
@@ -110,6 +113,95 @@ body {
             }
         }
     }
+    
+    .banner {
+        height: calc(100vh - 180px);
+        background-color: #333;
+        background-size: cover;
+        background-position: bottom;
+        overflow: hidden;
+    }  
+    .area {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        .sliders_op {
+            height: 100%; 
+            text-align: center;
+            .slider_op--show {
+                background-color: rgba(0, 0, 0, 0.65);
+                width: 100%;
+                height: calc(100vh - 180px);
+                position: absolute;
+                overflow: hidden;
+                .slider_op--width {
+                    display: flex;
+                    transition: all ease 0.2s;
+                    
+                }
+                .slider_op--item {
+                    width: 100%;
+                    height: inherit;
+                    background-position: center;
+                    background-size: cover;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: $backgroundLight;
+                    text-shadow: 0px 1px 1px #222;
+                    h1 {
+                        font-family: $title;
+                        color: $colorTextLight;
+                        font-size: 45px;
+                    }
+                    h2 {
+                        font-size: 30px;
+                        font-weight: normal;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        padding-top: 0px;
+                        padding-bottom: 0px;
+                        a {
+                            color: $colorTextLight;
+                            text-decoration: none;
+                            position: relative;
+                            z-index: 98;
+                            &:hover{
+                                color: $colorHover;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    h3 {
+                        font-size: 23px;
+                        font-weight: normal;
+                        font-style: italic;
+                        width: 90%;
+                    }
+                }
+                .slider_op--controls {
+                    position: absolute;
+                    z-index: 98;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items:center;
+                    .slider_op--control {
+                        color:  $colorTextLight;
+                        font-size: 80px;
+                        padding: 0px 20px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        &:hover {
+                            color: $colorHover;
+                            text-shadow: 0px 0px 4px #000;
+                        }
+                    }
+                }
+            }
+        }
+    }   
 }
 
 
