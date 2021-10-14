@@ -25,7 +25,7 @@ function updateMargin_op() {
     c('.slider_op--width').style.marginLeft = `-${newMargin_op}px`;
 }
 setInterval(goNext_op, 5000);
-
+/*
 //Mascara - Telefones
 function format(mask, document){
     let i = document.value.length;
@@ -37,7 +37,7 @@ function format(mask, document){
     }          
   }
 
-/*
+
 //Menu Mobile
 function menuMobile() {
     let lineMenuMobile = document.getElementById("line-menuMobile");
