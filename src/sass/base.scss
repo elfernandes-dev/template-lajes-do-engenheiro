@@ -14,6 +14,48 @@ $backgroundLight: #f7f7f7;
     position: relative;
     z-index: 98;
 }
+%defaultDark {
+    @extend %base;
+    background-color: $backgroundDark;
+    color: $colorTextLight
+}
+%defaultLight{
+    @extend %base;
+    background-color: $backgroundLight;
+    color: #000;
+}
+%container {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    h1 {
+        margin: 0px;
+        font-family: $title;
+        font-size: 45px;
+        text-transform: uppercase;
+    }
+}
+%defaultGridQuality {
+    padding: 0px 20px;
+    height: 100%;
+    h1 {
+        margin-bottom: -10px;
+    }
+    h2 {
+        margin-bottom: 0px;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 25px;
+    }
+
+}
 
 body {
     margin: 0;
@@ -211,17 +253,107 @@ body {
                 }
             }
         }
-    }   
+    }  
+    .defaultDark {
+        @extend %defaultDark;
+        .container {
+            @extend %container;
+            .aboutUsArea {
+                display: flex;    
+                align-items: center;
+                .aboutUsText {
+                   padding-right: 20px;
+                   width: 100%;
+                    p {
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                        line-height: 40px;
+                        text-align: justify;
+                    }
+                }
+                .aboutUsImg {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .defaultLight {
+        @extend %defaultLight;
+        .container {
+            @extend %container;
+        }
+        .quality {
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "quality quality quality quality"
+                "quality1 quality2 quality3 quality4"
+            ;
+            .gridQuality {
+                grid-area: quality;
+                @extend %defaultGridQuality;
+                margin-bottom: 10px;
+            }
+            .gridQuality1 {
+                grid-area: quality1;
+                @extend %defaultGridQuality;
+                border-right: 1px groove $backgroundDark;
+            }
+            .gridQuality2 {
+                grid-area: quality2;
+                @extend %defaultGridQuality;
+                border-right: 1px groove $backgroundDark;
+            } 
+            .gridQuality3 {
+                grid-area: quality3;
+                @extend %defaultGridQuality;
+                border-right: 1px groove $backgroundDark;
+            }           
+            .gridQuality4 {
+                grid-area: quality4;
+                @extend %defaultGridQuality;
+            }   
+        }
+    }
 }
 
 
 /*Laptop e Tablet*/
 @media (min-width: 960px) and (max-width: 1180px) {
-    //body {}
+    body {
+        .defaultDark {
+            .container {
+                .aboutUsArea {
+                    .aboutUsText {
+                       width: 130%;
+                    }
+                    /*.aboutUsImg {
+                        img {
+                            width: 100%;
+                        }
+                    }*/
+                }
+            }
+        }
+    }
 }
 
 /*Tablet*/
 @media (min-width: 760px) and (max-width: 960px) {
+    %defaultGridQuality {
+        h2 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 14px;
+            letter-spacing: 0px;
+            line-height: 23px;
+        }
+    
+    }
     body {
         header {
             .menu {
@@ -265,7 +397,40 @@ body {
                     }
                 }
             }
-        }  
+        } 
+        .defaultDark {
+            .container {
+                .aboutUsArea {
+                    .aboutUsText {
+                       width: 180%;
+                       P {
+                        letter-spacing: 0px;
+                        line-height: 35px;
+                       }
+                    }
+                    /*.aboutUsImg {
+                        img {
+                            width: 100%;
+                        }
+                    }*/
+                }
+            }
+        } 
+        .defaultLight {
+            .quality {
+                
+                .gridQuality1 {
+                    p {
+                        margin-top: 0px;
+                    }
+                }
+                .gridQuality2 {
+                   P {
+                    margin-top: 0px;
+                   }
+                } 
+            }
+        }
     }
 }
 
@@ -306,11 +471,37 @@ body {
                 }
             }
         }  
+        .defaultDark {
+            .container {
+                .aboutUsArea { 
+                    flex-direction: column;
+                    .aboutUsText {
+                        padding-right: 0px;
+                        width: 100%;
+                     }
+                }
+            }
+        }
+        .defaultLight {
+            .quality {
+                grid-template-areas: 
+                    "quality quality"
+                    "quality1 quality2"
+                    "quality3 quality4"
+                ;
+                .gridQuality2 {
+                    border-right: none;
+                }
+            }
+        }
     }
 }
 
 /*Celular*/
 @media (max-width: 390px) {
+    %defaultGridQuality {
+        border-right: none;
+    }
     body {
         header {
             .menu {
@@ -351,14 +542,39 @@ body {
                                 font-size: 20px;
                             }
                             h3 {
-                                font-size: 13px;
+                                font-size: 20px;
                                 letter-spacing: 3px;
-                                line-height: 26px;
+                                line-height: 31px;
                             }
                         }
                     }
                 }
             }
         } 
+        .defaultDark {
+            .container {
+                .aboutUsArea { 
+                    flex-direction: column;
+                    .aboutUsText {
+                        padding-right: 0px;
+                        width: 100%;
+                        P {
+                            letter-spacing: 2px;
+                        }
+                     }
+                }
+            }
+        }
+        .defaultLight {
+            .quality {
+                grid-template-areas: 
+                    "quality"
+                    "quality1"
+                    "quality2"
+                    "quality3"
+                    "quality4"
+                ;
+            }
+        }
     }
 }
