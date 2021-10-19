@@ -38,7 +38,7 @@ $backgroundLight: #f7f7f7;
         text-transform: uppercase;
     }
 }
-%defaultGridQuality {
+%defaultGrid {
     padding: 0px 20px;
     height: 100%;
     h1 {
@@ -54,9 +54,41 @@ $backgroundLight: #f7f7f7;
         letter-spacing: 1px;
         line-height: 25px;
     }
-
 }
+%defaultGridQuality {
+    @extend %defaultGrid;
+}
+%defaultGridTechnique {
+    @extend %defaultGrid;
+    img {
+        margin-top: 18px;
+        border: 4px double $backgroundLight;
+        background-size: cover;
+        background-position: bottom;
+        overflow: hidden;
+        height: 125px;
+        &:hover {
+            -webkit-transition: all .3s ease-in;
+            -webkit-transform: scale(1.3);
+        }
 
+    }
+}
+%defaultGridDepositions {
+    @extend %defaultGrid;
+    q {
+        font-style: italic;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 25px;
+    }
+    p {
+        margin-top: 5px;
+        font-size: 15px;
+        text-align: end;
+        font-weight: bold;
+    }
+}
 body {
     margin: 0;
     padding: 0;
@@ -155,11 +187,9 @@ body {
                        }
                     } 
                 }
-                
             }
         }
     }
-    
     .banner {
         height: calc(100vh - 180px);
         background-color: #333;
@@ -278,6 +308,34 @@ body {
                 }
             }
         }
+        .technique {
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "technique technique technique"
+                "technique1 technique2 technique3"
+            ;
+            .gridTechnique {
+                grid-area: technique;
+                @extend %defaultGridTechnique;
+                margin-bottom: 10px;
+            }
+            .gridTechnique1 {
+                grid-area: technique1;
+                @extend %defaultGridTechnique;
+            }
+            .gridTechnique2 {
+                grid-area: technique2;
+                @extend %defaultGridTechnique;
+                border-left: 1px groove $backgroundLight;
+                border-right: 1px groove $backgroundLight;
+            } 
+            .gridTechnique3 {
+                grid-area: technique3;
+                @extend %defaultGridTechnique;
+            }             
+        }
     }
     .defaultLight {
         @extend %defaultLight;
@@ -311,15 +369,157 @@ body {
                 grid-area: quality3;
                 @extend %defaultGridQuality;
                 border-right: 1px groove $backgroundDark;
+                a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                        color: $colorHover;
+                        text-shadow: 0px 0px 1px #000;
+                    }
+                }
             }           
             .gridQuality4 {
                 grid-area: quality4;
                 @extend %defaultGridQuality;
             }   
         }
+        .depositions {
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "depositions depositions depositions depositions"
+                "depositions1 depositions2 depositions3 depositions4"
+            ;
+            .gridDepositions {
+                grid-area: depositions;
+                @extend %defaultGridDepositions;
+                margin-bottom: 35px;
+            }
+            .gridDepositions1 {
+                grid-area: depositions1;
+                @extend %defaultGridDepositions;
+            }
+            .gridDepositions2 {
+                grid-area: depositions2;
+                @extend %defaultGridDepositions;
+            } 
+            .gridDepositions3 {
+                grid-area: depositions3;
+                @extend %defaultGridDepositions;
+            }           
+            .gridDepositions4 {
+                grid-area: depositions4;
+                @extend %defaultGridDepositions;
+            }  
+            .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                &:nth-child(even) {
+                    justify-content: start;
+                }
+            } 
+        }
+    }
+    footer {
+        @extend %base;
+        flex-direction: column;
+        background-color: #000;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        address {
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            padding-bottom: 15px;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            border-bottom: 2px solid $backgroundDark;
+            .companysAdress, .contact {
+                ul {
+                    color: #fff;
+                    margin: 0px;
+                    padding: 0px;
+                    li {
+                        list-style: none;
+                        span {
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-weight: 700;
+                        }
+                        a {
+                            display: flex;
+                            flex-direction: row;
+                            text-decoration: none;
+                            color: #fff;
+                            align-items: center;
+                            margin: 20px 0px;
+                            &:hover {
+                                color: $colorHover;
+                                img {
+                                    background-color: $colorHover;
+                                }
+                            }
+                            img {
+                                width: 40px;
+                                border-radius: 20px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ef {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .textFooter {
+                display: flex;
+                flex-direction: row;
+                color: #fff;
+                font-size: 15px;
+                font-weight: 700;
+                font-style: italic;
+                span {
+                    display: none;
+                }
+                a {
+                    color: #1db03f;
+                    text-decoration: none;
+                    &:hover {
+                        color: #06e1b8;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                margin-top: 5px;
+                padding: 0px;
+                li {
+                    list-style: none;
+                    img {
+                        width: 30px;
+                        border-radius: 20px;
+                        background-color: #1db03f;
+                        margin: 0px 10px;
+                        &:hover {
+                            background-color: #06e1b8 ;
+                        }
+                    }
+                }
+            }
+         }
     }
 }
-
 
 /*Laptop e Tablet*/
 @media (min-width: 960px) and (max-width: 1180px) {
@@ -330,11 +530,6 @@ body {
                     .aboutUsText {
                        width: 130%;
                     }
-                    /*.aboutUsImg {
-                        img {
-                            width: 100%;
-                        }
-                    }*/
                 }
             }
         }
@@ -343,7 +538,7 @@ body {
 
 /*Tablet*/
 @media (min-width: 760px) and (max-width: 960px) {
-    %defaultGridQuality {
+    %defaultGrid {
         h2 {
             font-size: 16px;
         }
@@ -354,6 +549,23 @@ body {
         }
     
     }
+    %defaultGridTechnique {
+        img {
+            height: 100px;
+        }
+    }
+    %defaultGridDepositions {
+        
+        q {
+            font-size: 14px;
+            letter-spacing: 0px;
+            line-height: 23px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    
     body {
         header {
             .menu {
@@ -371,7 +583,6 @@ body {
                     }      
                 }
             }
-    
         }
         .area {
             .sliders_op {
@@ -408,11 +619,6 @@ body {
                         line-height: 35px;
                        }
                     }
-                    /*.aboutUsImg {
-                        img {
-                            width: 100%;
-                        }
-                    }*/
                 }
             }
         } 
@@ -430,12 +636,67 @@ body {
                    }
                 } 
             }
+            .depositions {
+                .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
+                    height: 270px
+                } 
+            }
+        }
+        footer {
+            address {
+                .companysAdress, .contact{
+                    ul {
+                        li {
+                            font-size: 12px;
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            .ef {
+                .textFooter {
+                    font-size: 12px;
+                }
+                ul {
+                    li {
+                        img {
+                            width: 25px;
+                        }
+                    }
+                }
+                
+            }
         }
     }
 }
 
 /*Celular Plus*/
 @media (min-width: 390px) and (max-width: 760px) {
+    %defaultGrid {
+        h1 {
+            margin-bottom: 0px;
+        }
+        h2 {
+            margin-top: 30px;
+        };
+    }
+    %defaultGridQuality {
+        p {
+            margin: 10px 0px;
+        }
+    }
+    %defaultGridTechnique { 
+       img {
+           height: 150px;
+       }
+    }
+    %defaultGridDepositions {
+        q {
+            margin-top: 10px;
+        }
+    }
     body {
         header {
             .menu {
@@ -456,7 +717,6 @@ body {
                     }     
                 }
             }
-    
         }
         .area {
             .sliders_op {
@@ -481,6 +741,17 @@ body {
                      }
                 }
             }
+            .technique {
+                grid-template-areas: 
+                    "technique"
+                    "technique1"
+                    "technique2"
+                    "technique3"
+                ;
+                .gridTechnique2 {
+                    border: none;
+                }             
+            }
         }
         .defaultLight {
             .quality {
@@ -490,8 +761,45 @@ body {
                     "quality3 quality4"
                 ;
                 .gridQuality2 {
-                    border-right: none;
+                   border-right: none;
+               }
+            }
+            .depositions {
+                grid-template-areas: 
+                "depositions depositions"
+                "depositions1 depositions2"
+                "depositions3 depositions4"
+                ;
+                .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
+                    height: 250px
+                } 
+            }
+        }
+        footer {
+            address {
+                .companysAdress, .contact{
+                    ul {
+                        li {
+                            font-size: 12px;
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
                 }
+            }
+            .ef {
+                .textFooter {
+                    font-size: 12px;
+                }
+                ul {
+                    li {
+                        img {
+                            width: 25px;
+                        }
+                    }
+                }
+                
             }
         }
     }
@@ -499,8 +807,29 @@ body {
 
 /*Celular*/
 @media (max-width: 390px) {
-    %defaultGridQuality {
+    %defaultGrid {
         border-right: none;
+        h1 {
+            margin-bottom: 0px;
+        }
+        h2 {
+            margin-top: 30px;
+        };
+    }
+    %defaultGridQuality {
+        p {
+            margin: 10px 0px;
+        }
+    }
+    %defaultGridTechnique {    
+        img {
+            height: 120px;
+        }
+    }
+     %defaultGridDepositions {
+        q {
+            margin-top: 15px;
+        }
     }
     body {
         header {
@@ -522,7 +851,6 @@ body {
                     }     
                 }
             }
-    
         }
         .area {
             .sliders_op {
@@ -564,6 +892,17 @@ body {
                      }
                 }
             }
+            .technique {
+                grid-template-areas: 
+                    "technique"
+                    "technique1"
+                    "technique2"
+                    "technique3"
+                ;
+                .gridTechnique2 {
+                    border: none;
+                }             
+            }
         }
         .defaultLight {
             .quality {
@@ -574,6 +913,47 @@ body {
                     "quality3"
                     "quality4"
                 ;
+            }
+            .depositions {
+                grid-template-areas: 
+                "depositions"
+                "depositions1"
+                "depositions2"
+                "depositions3"
+                "depositions4"
+                ;
+                .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
+                    height: 100%
+                } 
+            }
+        }
+        footer {
+            address {
+                flex-direction: column;
+                align-items: start;
+                .companysAdress, .contact{
+                    ul {
+                        li {
+                            font-size: 12px;
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            .ef {
+                .textFooter {
+                    font-size: 12px;
+                }
+                ul {
+                    li {
+                        img {
+                            width: 25px;
+                        }
+                    }
+                }
+                
             }
         }
     }
