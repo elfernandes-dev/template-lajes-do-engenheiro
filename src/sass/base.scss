@@ -169,6 +169,33 @@ $defaultBorderLight: 4px double $backgroundLight;
     @extend %defaultColors;
     background-color: #262626;
 }
+%defaultGridProjectsDark {
+    @extend %defaultGrid;
+    h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    figure {
+        margin: 0px;
+        img {
+            margin-bottom: 15px;
+            border: $defaultBorderDark;
+            background-size: cover;
+            background-position: bottom;
+            overflow: hidden;
+            height: 215px
+        }
+    }
+}
+%defaultGridProjectsLight {
+    @extend %defaultGridProjectsDark;
+    figure {
+        img {
+            border: $defaultBorderLight;
+    
+        }
+    }
+}
 body {
     margin: 0;
     padding: 0;
@@ -473,6 +500,45 @@ body {
                 @extend %defaultGridProductsLight;
             }             
         }
+        .client2 {
+            margin-bottom: 60px;
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "client2 client2 client2"
+                "client2_1 client2_2 client2_3"
+                "client2_4 client2_5 client2_6"
+                ;
+            .gridClient2 {
+                grid-area: client2;
+                @extend %defaultGridProjectsLight;
+            }
+            .gridClient2_1 {
+                grid-area: client2_1;
+                @extend %defaultGridProjectsLight;
+            }
+            .gridClient2_2 {
+                grid-area: client2_2;
+                @extend %defaultGridProjectsLight;
+            }  
+            .gridClient2_3 {
+                grid-area: client2_3;
+                @extend %defaultGridProjectsLight;
+            } 
+            .gridClient2_4 {
+                grid-area: client2_4;
+                @extend %defaultGridProjectsLight;
+            } 
+            .gridClient2_5 {
+                grid-area: client2_5;
+                @extend %defaultGridProjectsLight;
+            } 
+            .gridClient2_6 {
+                grid-area: client2_6;
+                @extend %defaultGridProjectsLight;
+            }           
+        }
     }
     .defaultLight {
         @extend %defaultLight;
@@ -581,6 +647,45 @@ body {
                 @extend %defaultGridProductsDark;
             }            
         }
+        .client1 {
+            margin-bottom: 60px;
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "client1 client1 client1"
+                "client1_1 client1_2 client1_3"
+                "client1_4 client1_5 client1_6"
+                ;
+            .gridClient1 {
+                grid-area: client1;
+                @extend %defaultGridProjectsDark;
+            }
+            .gridClient1_1 {
+                grid-area: client1_1;
+                @extend %defaultGridProjectsDark;
+            }
+            .gridClient1_2 {
+                grid-area: client1_2;
+                @extend %defaultGridProjectsDark;
+            }  
+            .gridClient1_3 {
+                grid-area: client1_3;
+                @extend %defaultGridProjectsDark;
+            } 
+            .gridClient1_4 {
+                grid-area: client1_4;
+                @extend %defaultGridProjectsDark;
+            } 
+            .gridClient1_5 {
+                grid-area: client1_5;
+                @extend %defaultGridProjectsDark;
+            } 
+            .gridClient1_6 {
+                grid-area: client1_6;
+                @extend %defaultGridProjectsDark;
+            }           
+        }
     }
     footer {
         @extend %base;
@@ -682,10 +787,9 @@ body {
 
 /*Laptop e Tablet*/
 @media (min-width: 960px) and (max-width: 1180px) {
-    %defaultGridProductsDark {   
+    %defaultGridProductsDark, %defaultGridProjectsDark {   
         figure {
             img {
-                
                 height: 180px;
             }
         }
@@ -739,6 +843,16 @@ body {
         figure {
             img {
                 height: 200px;
+            }
+        }
+    }
+    %defaultGridProjectsDark {
+        h2 {
+            font-size: 25px;
+        }
+        figure {
+            img {
+                height: 205px;
             }
         }
     }
@@ -808,6 +922,14 @@ body {
                     "castElements3 castElements4"
                     "castElements5 castElements5";
             }
+            .client2 {
+                grid-template-areas: 
+                    "client2 client2"
+                    "client2_1 client2_2"
+                    "client2_3 client2_4"
+                    "client2_5 client2_6"
+                ;
+            }
         } 
         .defaultLight {
             .quality {
@@ -836,6 +958,14 @@ body {
                         }
                     }
                 }
+            }
+            .client1 {
+                grid-template-areas: 
+                    "client1 client1"
+                    "client1_1 client1_2"
+                    "client1_3 client1_4"
+                    "client1_5 client1_6"
+                ;
             }
         }
         footer {
@@ -907,6 +1037,16 @@ body {
         width: 23px;
         height: 23px;
     }
+    %defaultGridProjectsDark {  
+        h2 {
+            font-size: 20px;
+        }
+        figure {
+            img {
+                height: 170px;
+            }
+        }
+    }
     body {
         header {
             .menu {
@@ -969,6 +1109,14 @@ body {
                     "castElements3 castElements4"
                     "castElements5 castElements5";
             }
+            .client2 {
+                grid-template-areas: 
+                    "client2 client2"
+                    "client2_1 client2_2"
+                    "client2_3 client2_4"
+                    "client2_5 client2_6"
+                ;
+            }
         }
         .defaultLight {
             .quality {
@@ -1004,6 +1152,14 @@ body {
                         }
                     }
                 }
+            }
+            .client1 {
+                grid-template-areas: 
+                    "client1 client1"
+                    "client1_1 client1_2"
+                    "client1_3 client1_4"
+                    "client1_5 client1_6"
+                ;
             }
         }
         footer {
@@ -1091,6 +1247,20 @@ body {
         width: 20px;
         height: 20px;
     }
+    %defaultGridProjectsDark {  
+        h1 {
+            font-size: 22px;
+        }
+        h2 {
+            margin-top: 35px;
+            font-size: 16px;
+        }
+        figure {
+            img {
+                height: 170px;
+            }
+        }
+    }
     body {
         header {
             .menu {
@@ -1173,6 +1343,17 @@ body {
                     "castElements5"
                 ;
             }
+            .client2 {
+                grid-template-areas: 
+                    "client2"
+                    "client2_1"
+                    "client2_2"
+                    "client2_3"
+                    "client2_4"
+                    "client2_5"
+                    "client2_6"
+                ;
+            }
         }
         .defaultLight {
             .quality {
@@ -1209,6 +1390,17 @@ body {
                         }
                     }
                 }
+            }
+            .client1 {
+                grid-template-areas: 
+                    "client1"
+                    "client1_1"
+                    "client1_2"
+                    "client1_3"
+                    "client1_4"
+                    "client1_5"
+                    "client1_6"
+                ;
             }
         }
         footer {
