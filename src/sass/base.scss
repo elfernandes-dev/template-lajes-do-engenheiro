@@ -5,6 +5,8 @@ $colorTextLight: #e3e3e3;
 $colorHover: #92a3bd;
 $backgroundDark: #242424;
 $backgroundLight: #f7f7f7;
+$defaultBorderDark: 4px double $backgroundDark;
+$defaultBorderLight: 4px double $backgroundLight;
 %base {
     max-width: 100%;
     display: flex;
@@ -62,7 +64,7 @@ $backgroundLight: #f7f7f7;
     @extend %defaultGrid;
     img {
         margin-top: 18px;
-        border: 4px double $backgroundLight;
+        border: $defaultBorderLight;
         background-size: cover;
         background-position: bottom;
         overflow: hidden;
@@ -88,6 +90,84 @@ $backgroundLight: #f7f7f7;
         text-align: end;
         font-weight: bold;
     }
+}
+%defaultGridProductsDark {
+    @extend %defaultGrid;
+    h2 {
+        font-size: 35px;
+    }
+    h3 {
+        font-size: 20px;
+        margin: 0px;
+        margin-top: 40px;
+    }
+    figure {
+        margin: 0px;
+        img {
+            margin-top: 5px;
+            border: $defaultBorderDark;
+            background-size: cover;
+            background-position: bottom;
+            overflow: hidden;
+            height: 215px
+        }
+        figcaption {
+            font-size: 15px;
+        }
+    }
+}
+%defaultGridProductsLight {
+    @extend %defaultGridProductsDark;
+    figure {
+        img {
+            border: $defaultBorderLight;
+    
+        }
+    }
+}
+%defaultColorsArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    h3 {
+        margin-top: 0px;
+        font-style: italic;
+    }
+}
+%defaulColorsDisplay{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+}
+%defaultColors {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px;
+    border: 2px solid $backgroundLight;
+    border-radius: 20px;
+}
+%defaultColorConcrete {
+    @extend %defaultColors;
+    background-color: #929090;
+}
+%defaultColorYellow {
+    @extend %defaultColors;
+    background-color: #BF9649;
+}
+%defaultColorGreen {
+    @extend %defaultColors;
+    background-color: #688C5E;
+}
+%defaultColorRed {
+    @extend %defaultColors;
+    background-color: #A63737;
+}
+%defaultColorBlack {
+    @extend %defaultColors;
+    background-color: #262626;
 }
 body {
     margin: 0;
@@ -336,6 +416,63 @@ body {
                 @extend %defaultGridTechnique;
             }             
         }
+        .castElements {
+            margin-bottom: 60px;
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "castElements castElements castElements castElements castElements castElements"
+                "castElements1 castElements1 castElements2 castElements2 castElements3 castElements3"
+                "castElements4 castElements4 castElements4 castElements5 castElements5 castElements5"
+            ;
+            .gridCastElements {
+                grid-area: castElements;
+                @extend %defaultGridProductsLight;
+                margin-bottom: 10px;
+                .colors {
+                    @extend %defaultColorsArea;
+                    .colorsDisplay {
+                        @extend %defaulColorsDisplay;
+                        .concrete {
+                            @extend %defaultColorConcrete;
+                        }
+                        .yellow {
+                            @extend %defaultColorYellow;
+                        }
+                        .green {
+                            @extend %defaultColorGreen;
+                        }
+                        .red {
+                            @extend %defaultColorRed;
+                        }
+                        .black {
+                            @extend %defaultColorBlack;
+                        } 
+                    }   
+                }
+            }
+            .gridCastElements1 {
+                grid-area: castElements1;
+                @extend %defaultGridProductsLight;
+            }
+            .gridCastElements2 {
+                grid-area: castElements2;
+                @extend %defaultGridProductsLight;
+            }
+            .gridCastElements3 {
+                grid-area: castElements3;
+                @extend %defaultGridProductsLight;
+            } 
+            .gridCastElements4 {
+                grid-area: castElements4;
+                @extend %defaultGridProductsLight;
+            } 
+            .gridCastElements5 {
+                grid-area: castElements5;
+                @extend %defaultGridProductsLight;
+            }             
+        }
     }
     .defaultLight {
         @extend %defaultLight;
@@ -421,6 +558,28 @@ body {
                     justify-content: start;
                 }
             } 
+        }
+        .slabs {
+            margin-bottom: 60px;
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "slabs slabs"
+                "slabs1 slabs2"
+            ;
+            .gridSlabs {
+                grid-area: slabs;
+                @extend %defaultGridProductsDark;
+            }
+            .gridSlabs1 {
+                grid-area: slabs1;
+                @extend %defaultGridProductsDark;
+            }
+            .gridSlabs2 {
+                grid-area: slabs2;
+                @extend %defaultGridProductsDark;
+            }            
         }
     }
     footer {
@@ -523,6 +682,14 @@ body {
 
 /*Laptop e Tablet*/
 @media (min-width: 960px) and (max-width: 1180px) {
+    %defaultGridProductsDark {   
+        figure {
+            img {
+                
+                height: 180px;
+            }
+        }
+    }
     body {
         .defaultDark {
             .container {
@@ -565,7 +732,20 @@ body {
             font-size: 14px;
         }
     }
-    
+    %defaultGridProductsDark {  
+        h3 {
+            font-size: 16px;
+        }
+        figure {
+            img {
+                height: 200px;
+            }
+        }
+    }
+    %defaultColors {
+        width: 23px;
+        height: 23px;
+    }
     body {
         header {
             .menu {
@@ -621,6 +801,13 @@ body {
                     }
                 }
             }
+            .castElements {
+                grid-template-areas: 
+                    "castElements castElements"
+                    "castElements1 castElements2"
+                    "castElements3 castElements4"
+                    "castElements5 castElements5";
+            }
         } 
         .defaultLight {
             .quality {
@@ -640,6 +827,15 @@ body {
                 .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
                     height: 270px
                 } 
+            }
+            .slabs {
+                .gridSlabs1, .gridSlabs2 {
+                    figure {
+                        img {
+                            height: 164px;
+                        }
+                    }
+                }
             }
         }
         footer {
@@ -697,6 +893,20 @@ body {
             margin-top: 10px;
         }
     }
+    %defaultGridProductsDark {  
+        h3 {
+            font-size: 16px;
+        }
+        figure {
+            img {
+                height: 170px;
+            }
+        }
+    }
+    %defaultColors {
+        width: 23px;
+        height: 23px;
+    }
     body {
         header {
             .menu {
@@ -752,6 +962,13 @@ body {
                     border: none;
                 }             
             }
+            .castElements {
+                grid-template-areas: 
+                    "castElements castElements"
+                    "castElements1 castElements2"
+                    "castElements3 castElements4"
+                    "castElements5 castElements5";
+            }
         }
         .defaultLight {
             .quality {
@@ -773,6 +990,20 @@ body {
                 .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
                     height: 250px
                 } 
+            }
+            .slabs {
+                grid-template-areas: 
+                    "slabs"
+                    "slabs1"
+                    "slabs2"
+                ;
+                .gridSlabs1, .gridSlabs2 {
+                    figure {
+                        img {
+                            height: 230px;
+                        }
+                    }
+                }
             }
         }
         footer {
@@ -830,6 +1061,35 @@ body {
         q {
             margin-top: 15px;
         }
+    }
+    %defaultGridProductsDark {  
+        h1 {
+            font-size: 22px;
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: -10px;
+            font-size: 20px;
+        }
+        h3 {
+            margin-top: 35px;
+            font-size: 16px;
+        }
+        figure {
+            img {
+                height: 170px;
+            }
+        }
+    }
+    %defaultColorsArea {
+        flex-direction: column;
+        h3 {
+            margin:10px 0px;
+        }
+    }
+    %defaultColors {
+        width: 20px;
+        height: 20px;
     }
     body {
         header {
@@ -903,6 +1163,16 @@ body {
                     border: none;
                 }             
             }
+            .castElements {
+                grid-template-areas: 
+                    "castElements"
+                    "castElements1"
+                    "castElements2"
+                    "castElements3"
+                    "castElements4"
+                    "castElements5"
+                ;
+            }
         }
         .defaultLight {
             .quality {
@@ -925,6 +1195,20 @@ body {
                 .gridDepositions1, .gridDepositions2, .gridDepositions3, .gridDepositions4 {
                     height: 100%
                 } 
+            }
+            .slabs {
+                grid-template-areas: 
+                    "slabs"
+                    "slabs1"
+                    "slabs2"
+                ;
+                .gridSlabs1, .gridSlabs2 {
+                    figure {
+                        img {
+                            height: 135px;
+                        }
+                    }
+                }
             }
         }
         footer {
