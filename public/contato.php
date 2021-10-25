@@ -61,11 +61,14 @@
             </div>
             <div class="contact">
                 <ul>
-                    <li><a href="https://api.whatsapp.com/send?phone=5573999012925" title="WhatsApp" target="_blank"><img src="assets/img/ico/whatsapp.png"/>(73) 99901-2925</a></li>
-                    <li><a href="mailto: contato@lajesdoengenheiro.com.br" title="E-mail" target="_blank"><img src="assets/img/ico/email.png"/>contato@lajesdoengenheiro.com.br</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=5573999012925" title="WhatsApp" target="_blank"><img src="assets/img/ico/whatsapp_background.png"/>(73) 99901-2925</a></li>
+                    <li><a href="mailto: contato@lajesdoengenheiro.com.br" title="E-mail" target="_blank"><img src="assets/img/ico/email_background.png"/>contato@lajesdoengenheiro.com.br</a></li>
                 </ul>
             </div>
         </address>
+        <div class="privacyPolicyArea">
+            <h4><a href="politicadeprivacidade.html" title="Conheça nossa Política de Privacidade" target="_blank">Política de Privacidade</h4></a>
+        </div>
         <div class="ef">
             <div class=textFooter>© 2021 - by &nbsp<a href="" title="Site em breve"> Evandro Fernandes</a></div>
             <ul>

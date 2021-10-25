@@ -725,14 +725,13 @@ body {
         address {
             margin: auto;
             margin-top: 20px;
-            margin-bottom: 5px;
-            padding-bottom: 15px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
             height: fit-content;
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 90%;
-            border-bottom: 2px solid $backgroundDark;
             .companysAdress, .contact {
                 ul {
                     color: #fff;
@@ -740,6 +739,7 @@ body {
                     padding: 0px;
                     li {
                         list-style: none;
+                        width: max-content;
                         span {
                             font-size: 14px;
                             text-transform: uppercase;
@@ -749,29 +749,55 @@ body {
                             display: flex;
                             flex-direction: row;
                             text-decoration: none;
-                            color: #fff;
                             align-items: center;
                             margin: 20px 0px;
+                            color: #fff;
+                            img {
+                                background-color: #fff;
+                                width: 40px;
+                                margin-right: 5px;
+                            }
                             &:hover {
                                 color: $colorHover;
                                 img {
                                     background-color: $colorHover;
-                                }
-                            }
-                            img {
-                                width: 40px;
-                                border-radius: 20px;
-                                margin-right: 5px;
+                                    }
                             }
                         }
                     }
                 }
             }
         }
+        .privacyPolicyArea {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 0px;
+            h4 {
+                margin: 0px;
+                text-align: center;
+                text-transform: uppercase;
+                a {
+                    color: $colorTextDark;
+                    text-decoration: none;
+                    &:hover {
+                        color: $colorHover;
+                        text-decoration: underline; 
+                    }
+                }
+                .active {
+                    color: $colorHover;
+                    font-weight: 600;
+                }
+            }
+
+        }
         .ef {
+            margin-top: 10px;;
+            padding-top: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-top: 2px solid $backgroundDark;
             .textFooter {
                 display: flex;
                 flex-direction: row;
@@ -1203,6 +1229,13 @@ body {
                     }
                 }
             }
+            .privacyPolicyArea {
+                h4 {
+                    a {
+                        font-size: 10px;
+                    }
+                }
+            } 
             .ef {
                 .textFooter {
                     font-size: 12px;
@@ -1466,6 +1499,13 @@ body {
                     }
                 }
             }
+            .privacyPolicyArea {
+                h4 {
+                    a {
+                        font-size: 10px;
+                    }
+                }
+            } 
             .ef {
                 .textFooter {
                     font-size: 12px;
