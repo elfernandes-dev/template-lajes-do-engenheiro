@@ -714,6 +714,131 @@ body {
                 @extend %defaultGridProjectsDark;
             }           
         }
+        .contactArea {
+            width: 90%;
+            h2 {
+                font-size: 35px;
+                margin-bottom: 0px;
+                text-transform: uppercase;
+            }
+            p {
+                margin-top: 2px;
+                font-size: 12px;
+                font-weight: 600;
+                font-style: italic;
+            }
+            form {
+                margin-top: 10px;
+                border-bottom: 1px groove $backgroundDark;
+                .formArea{
+                    width: 90vw;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    fieldset {
+                        width: inherit;
+                        border: 4px double #000;
+                        border-radius: 6px;
+                        legend {
+                            text-align: center;
+                            font-size: 19px;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            border: 2px groove #000;
+                            box-shadow: 1px 1px 5px #000;
+                        }
+                        label {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: baseline;
+                            h4 {
+                                margin-right: 10px;
+                                margin-bottom: 5px;
+                                font-size: 15px;
+                                font-style: italic;
+                            }
+                            select {
+                                outline: 0px;
+                            }
+                            input {
+                                margin-bottom: 25px;
+                                outline: 0px;
+                            }
+                        }
+                        .messageArea {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            textarea {
+                                width: 100%;
+                                height: 5vw;
+                                outline: 0px;
+                                resize: none;
+                            }
+                        }
+                        .checkboxArea {
+                            margin-left: 10px;
+                            display: flex;
+                            flex-direction: row;
+                            font-size: 15px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .buttonArea {
+                    margin: auto;
+                    width: fit-content;
+                    display: flex;
+                    flex-direction: column;
+                    input {
+                        margin-top: 20px;
+                        width: 110px;
+                        height: 45px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border-radius: 15px;
+                        color: $colorTextLight;
+                        background-color:$backgroundDark;
+                        cursor: pointer;
+                        &:hover {
+                        color: $colorTextDark;
+                        background-color: $colorHover;
+                        }
+                    }
+                }
+                .checkboxPolicy {
+                    margin:auto;
+                    margin-top:10px;
+                    margin-bottom: 10px;
+                    width: fit-content;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 15px;
+                    font-weight: 600;
+                    a {
+                        color: $colorTextDark;
+                        text-decoration: none;
+                        &:hover {
+                            color: $colorHover;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .flash {
+                    margin-bottom: 10px;
+                    text-align: center;
+                    font-weight: 600;
+                    font-size: 14px;}
+            }
+            .mapsArea {
+                margin-top: 10px;
+                iframe {
+                    width: 90vw;
+                    height: 30vw;
+                }
+            }
+        }
     }
     footer {
         @extend %base;
@@ -1021,6 +1146,36 @@ body {
                     "client1_5 client1_6"
                 ;
             }
+            .contactArea {
+                form {
+                    .formArea {
+                        fieldset {
+                            text-align: center;
+                            label {
+                                display: block;
+                                h4 {
+                                    font-size: 14px;
+                                }
+                            }
+                            .phoneArea {
+                                .checkboxArea {
+                                    margin-top: -15px;
+                                    font-size: 14px;
+                                    justify-content: center;
+                                    input {
+                                        padding-right: 10px;
+                                    }
+                                }
+                            }
+                            .messageArea {
+                                textarea {
+                                    height: 15vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         footer {
             address {
@@ -1214,6 +1369,24 @@ body {
                     "client1_3 client1_4"
                     "client1_5 client1_6"
                 ;
+            }
+            .contactArea {
+                h2 {
+                    font-size: 30px;
+                }
+                form {
+                    .formArea {
+                        flex-direction: column;
+                        align-items: center;
+                        fieldset {
+                            margin-bottom: 15px;
+                            label {
+                                display: flex;
+                                flex-direction: row;
+                            }
+                        }
+                    }
+                }
             }
         }
         footer {
@@ -1482,6 +1655,53 @@ body {
                     "client1_5"
                     "client1_6"
                 ;
+            }
+            .contactArea {
+                h2 {
+                    margin-top: 10px;
+                    font-size: 27px;
+                }
+                form {
+                    .formArea {
+                        flex-direction: column;
+                        align-items: center;
+                        fieldset {
+                            margin-bottom: 15px;
+                            width: fit-content;
+                            label {
+                                display: block;
+                                text-align: center;
+                            }
+                            .messageArea {
+                                textarea {
+                                    height: 20vw;
+                                }
+                            }
+                        }
+                        .phoneArea {
+                            .checkboxArea {
+                                margin-top: -15px;
+                                font-size: 14px;
+                                justify-content: center;
+                                input {
+                                    padding-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .checkboxPolicy {
+                        font-size: 11px;
+                        align-items: center;
+                    }
+                    .flash {
+                        font-size: 10px;
+                    }
+                }
+                .mapsArea {
+                    iframe {
+                        height: 51vw;
+                    }
+                }
             }
         }
         footer {
