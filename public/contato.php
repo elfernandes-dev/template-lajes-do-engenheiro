@@ -1,3 +1,43 @@
+<?php
+$myEmail = 'elfernandes.dev@gmail.com';
+$myServer = 'smtp.gmail.com';
+$name = ucwords(strtolower(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS)));
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+$ddd = filter_input(INPUT_POST, 'ddd');
+$cel = filter_input(INPUT_POST, 'cel', FILTER_SANITIZE_SPECIAL_CHARS);
+$whatsApp = filter_input(INPUT_POST, 'whatsapp');
+$subject = ucfirst(strtolower(filter_input(INPUT_POST, 'subjectMatter', FILTER_SANITIZE_SPECIAL_CHARS)));
+$message = ucfirst(strtolower(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING)));
+$secrecy = filter_input(INPUT_POST, 'secrecy');
+if($name && $email && $ddd && $cel && $subject && $message && $secrecy)
+{   
+    $headers =  "Content-Type:text/html; charset=UTF-8\n";
+    $headers .= "From:  ".$myServer."<".$email.">\n";
+    $headers .= "X-Sender:  <".$email.">\n";
+    $headers .= "X-Mailer: PHP  v".phpversion()."\n";
+    $headers .= "X-IP:  ".$_SERVER['REMOTE_ADDR']."\n";
+    $headers .= "Return-Path:  <".$email.">\n";
+    $headers .= "MIME-Version: 1.0\n";
+    if ($whatsApp == 'on') {
+        $whatsAppStatus = ' (WhatsApp)';
+    } else {
+        $whatsAppStatus = '';
+    }    
+    $messageEmail = "Formulário para Contato". 
+        "\r\n Nome: " . $name .
+        "\r\n Email: " . $email .
+        "\r\n Celular: (". $ddd .") " . $cel . $whatsAppStatus.
+        "\r\n Mensagem: " . $message
+    ;  
+    $send = mail($myEmail,$subject,$messageEmail);   
+    if ($send) {
+        $flash = 'Mensagem encaminhada, entraremos em contato o quanto antes. Obrigado!';
+    }else {
+        $flash = 'Opa! Algo deu errado. Por favor, atualize a página e tente novamente. Obrigado!';
+    }
+    $flash;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -60,8 +100,8 @@
                             <input type="email" name="email" placeholder="exemplo@email.com" size="40" autocomplete="off" required/>
                         </label>
                         <label class="phoneArea">
-                            <h4>* DDD / * Telefone:</h4>
-                            <select name="ddd" id="ddd">
+                            <h4>* DDD / * Celular:</h4>
+                            <select name="ddd" id="ddd" required>
                                 <option></option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
@@ -181,7 +221,9 @@
                     <input type="checkbox" name="secrecy" required/><em>Li e concordo com a <a href="politicadeprivacidade.html" title="Conheça nossa Política de Privacidade antes de encaminhar o formulário" target="_blank">Política de Privacidade</a> do site.</em>
                 </label>
                 <div class="flash">
-                    Mensagem encaminhada, entraremos em contato o quanto antes. Obrigado!
+                    <?php if(!empty($flash)):?>
+                        <?php echo $flash;?>
+                    <?php endif;?>
                 </div>
             </form>
             <h2>Localização</h2>
