@@ -35,6 +35,7 @@ $defaultBorderLight: 4px double $backgroundLight;
     margin-bottom: 10px;
     h1 {
         margin: 0px;
+        margin-top: 70px;
         font-family: $title;
         font-size: 45px;
         text-transform: uppercase;
@@ -109,7 +110,11 @@ $defaultBorderLight: 4px double $backgroundLight;
             background-size: cover;
             background-position: bottom;
             overflow: hidden;
-            height: 200px
+            height: 200px;
+            &:hover {
+                -webkit-transition: all .2s ease-in;
+                -webkit-transform: scale(1.1);
+            }
         }
         figcaption {
             font-size: 15px;
@@ -183,7 +188,11 @@ $defaultBorderLight: 4px double $backgroundLight;
             background-size: cover;
             background-position: bottom;
             overflow: hidden;
-            height: 200px
+            height: 200px;
+            &:hover {
+                -webkit-transition: all .2s ease-in;
+                -webkit-transform: scale(1.2);
+            }
         }
     }
 }
@@ -203,8 +212,11 @@ body {
     font-family: 'Verdana', sans-serif;
     header {
         @extend %base;
+        width: 100%;
         height: 60px;
         background-color: #000;
+        position: fixed;
+        z-index: 100;
         .menu {
             width: 90%;
             height: 100%;
@@ -313,6 +325,7 @@ body {
             text-align: center;
             .slider_op--show {
                 width: 100%;
+                margin-top: 60px;
                 height: calc(100vh - 180px);
                 position: absolute;
                 overflow: hidden;
@@ -426,6 +439,7 @@ body {
             .gridTechnique {
                 grid-area: technique;
                 @extend %defaultGridTechnique;
+                margin-top: -70px;
                 margin-bottom: 10px;
             }
             .gridTechnique1 {
@@ -584,6 +598,7 @@ body {
             .gridQuality {
                 grid-area: quality;
                 @extend %defaultGridQuality;
+                margin-top: -70px;
                 margin-bottom: 10px;
             }
             .gridQuality1 {
@@ -625,6 +640,7 @@ body {
             .gridDepositions {
                 grid-area: depositions;
                 @extend %defaultGridDepositions;
+                margin-top: -70px;
                 margin-bottom: 35px;
             }
             .gridDepositions1 {
@@ -675,6 +691,66 @@ body {
                 @extend %defaultGridProductsDark;
             }            
         }
+
+        .castElements {
+            margin-bottom: 60px;
+            display: grid;
+            text-align: center;
+            align-items: flex-start;
+            grid-template-areas: 
+                "castElements castElements castElements castElements castElements castElements"
+                "castElements1 castElements1 castElements2 castElements2 castElements3 castElements3"
+                "castElements4 castElements4 castElements4 castElements5 castElements5 castElements5"
+            ;
+            .gridCastElements {
+                grid-area: castElements;
+                @extend %defaultGridProductsDark;
+                margin-bottom: 10px;
+                .colors {
+                    @extend %defaultColorsArea;
+                    .colorsDisplay {
+                        @extend %defaulColorsDisplay;
+                        .concrete {
+                            @extend %defaultColorConcrete;
+                        }
+                        .yellow {
+                            @extend %defaultColorYellow;
+                        }
+                        .green {
+                            @extend %defaultColorGreen;
+                        }
+                        .red {
+                            @extend %defaultColorRed;
+                        }
+                        .black {
+                            @extend %defaultColorBlack;
+                        } 
+                    }   
+                }
+            }
+            .gridCastElements1 {
+                grid-area: castElements1;
+                @extend %defaultGridProductsDark;
+            }
+            .gridCastElements2 {
+                grid-area: castElements2;
+                @extend %defaultGridProductsDark;
+            }
+            .gridCastElements3 {
+                grid-area: castElements3;
+                @extend %defaultGridProductsDark;
+            } 
+            .gridCastElements4 {
+                grid-area: castElements4;
+                @extend %defaultGridProductsDark;
+            } 
+            .gridCastElements5 {
+                grid-area: castElements5;
+                @extend %defaultGridProductsDark;
+            }             
+        }
+
+
         .client1 {
             margin-bottom: 60px;
             display: grid;
@@ -1140,6 +1216,13 @@ body {
                     }
                 }
             }
+            .castElements {
+                grid-template-areas: 
+                    "castElements castElements"
+                    "castElements1 castElements2"
+                    "castElements3 castElements4"
+                    "castElements5 castElements5";
+            }
             .client1 {
                 grid-template-areas: 
                     "client1 client1"
@@ -1364,6 +1447,13 @@ body {
                     }
                 }
             }
+            .castElements {
+                grid-template-areas: 
+                    "castElements castElements"
+                    "castElements1 castElements2"
+                    "castElements3 castElements4"
+                    "castElements5 castElements5";
+            }
             .client1 {
                 grid-template-areas: 
                     "client1 client1"
@@ -1397,6 +1487,7 @@ body {
                     ul {
                         li {
                             font-size: 12px;
+                            width: fit-content;
                             span {
                                 font-size: 12px;
                             }
@@ -1647,6 +1738,16 @@ body {
                     }
                 }
             }
+            .castElements {
+                grid-template-areas: 
+                    "castElements"
+                    "castElements1"
+                    "castElements2"
+                    "castElements3"
+                    "castElements4"
+                    "castElements5"
+                ;
+            }
             .client1 {
                 grid-template-areas: 
                     "client1"
@@ -1714,6 +1815,7 @@ body {
                     ul {
                         li {
                             font-size: 12px;
+                            width: fit-content;
                             span {
                                 font-size: 12px;
                             }
