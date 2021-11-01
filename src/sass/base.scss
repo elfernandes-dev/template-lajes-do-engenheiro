@@ -19,7 +19,7 @@ $defaultBorderLight: 4px double $backgroundLight;
 %defaultDark {
     @extend %base;
     background-color: $backgroundDark;
-    color: $colorTextLight
+    color: $colorTextLight;
 }
 %defaultLight{
     @extend %base;
@@ -233,8 +233,8 @@ body {
                    ul {
                        display: flex;
                        li {
+                            color: $colorTextLight; 
                             list-style: none;
-                            margin-right: 5px;
                             text-transform: uppercase;
                             font-family: $title;
                             font-size: 35px;
@@ -252,10 +252,21 @@ body {
                                     text-decoration: underline;
                                     color: $colorHover;
                                 }
-                            }  
+                            } 
+                            #linkProducts {
+                                text-transform: uppercase;
+                                font-family: $title;
+                                font-size: 35px;
+                                letter-spacing: 10px;
+                                cursor: pointer;
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $colorHover;
+                                }
+                            }
                             .active {
                                 color: $colorHover;
-                                font-weight: 600;
+                                font-weight: 700;
                             }  
                         }
                    }
@@ -280,13 +291,16 @@ body {
                     }
                     .linksMobile {
                        display: none;
+
+                       //display: block;
                        position: absolute;
                        top: 60px;
                        left: 0px;
                        width: 100%;
-                       background-color: rgba(0, 0, 0, 0.7);
+                       background-color: rgba(0, 0, 0, 0.85);
                        ul {
                         text-align: center;
+                        padding: 0px;
                            li {
                                 list-style: none;
                                 margin-right: 5px;
@@ -299,12 +313,93 @@ body {
                                     text-decoration: none;
                                 }  
                                 .active {
-                                    color: $colorHover;
-                                    font-weight: 600;
+                                        color: $colorHover;
+                                        font-weight: 700;
                                 } 
                            }
                        }
+                       #menuProductsMobile {
+                           margin: auto;
+                           margin-top: -10px;
+                           padding-top: 20px;
+                           width: 90%;
+                           display: flex;
+                           flex-direction: column;
+                           background-color: rgba(204, 204, 204, 0.95);
+                           border-radius: 0px 0px 40px 40px;
+                           ul {
+                               padding: 0px;
+                               li {
+                                    font-size: 30px;
+                                    line-height: 60px;
+                                   a {
+                                        color: $backgroundDark;
+                                        &:hover {
+                                            text-decoration: underline;
+                                            color: $colorTextDark;
+                                        } 
+                                   }
+                               }
+                           }
+                       }
                     } 
+                }
+                #menuProducts {
+                    display: none;
+                    top: 60px;
+                    left: 0px;
+                    right: 0px;
+                    position: absolute;
+                    background-color: rgba(204, 204, 204, 0.95);
+                    ul {
+                        display: grid;
+                        justify-content: space-around;
+                        text-align: center;
+                        padding-right: 5%;
+                        height: fit-content;
+                        grid-template-areas: 
+                        "link1 link2 link3 link4 link5 linkX"
+                        ;
+                        li {
+                            list-style: none;
+                            text-transform: uppercase;
+                            font-family: $title;
+                            font-size: 28px;
+                            letter-spacing: 2px;
+                            a {
+                                color: $backgroundDark;   
+                                text-decoration: none;
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: $colorTextDark;
+                                }
+                            }  
+                        }
+                        .gridLink1 {
+                            grid-area: link1;
+                        }
+                        .gridLink2 {
+                            grid-area: link2;
+                        }
+                        .gridLink3 {
+                            grid-area: link3;
+                        }
+                        .gridLink4 {
+                            grid-area: link4;
+                        }
+                        .gridLink5 {
+                            grid-area: link5;
+                        }
+                        .gridLinkX {
+                            grid-area: linkX;
+                            color: $backgroundDark;   
+                            text-decoration: none;
+                            cursor: pointer;
+                            &:hover {
+                                color: $colorTextDark;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -403,7 +498,7 @@ body {
                 }
             }
         }
-    }  
+    } 
     .defaultDark {
         @extend %defaultDark;
         .container {
@@ -1131,7 +1226,16 @@ body {
                                 border-left: none; 
                             }
                         }
-                    }      
+                    }
+                    #menuProducts {
+                        ul {
+                            line-height: 55px;
+                            grid-template-areas: 
+                            "link1 link2 link3"
+                            "link4 link5 linkX"
+                            ;
+                        }
+                    }     
                 }
             }
         }
@@ -1605,7 +1709,7 @@ body {
                             display: none;
                             //display: block;
                         }
-                    }     
+                    }      
                 }
             }
         }

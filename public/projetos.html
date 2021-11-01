@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Evandro Fernandes">
-    <title>Lajes do Engenheiro: Lajes com técnica</title>
+    <title>Lajes do Engenheiro: Projetos</title>
      <link rel="shortcut icon" href="assets/img/ico/favicon.ico"/>
     <meta name="description" content="Temos projetos em várias regiões, como, Porto Seguro, Arraial d'Ajuda, Caraiva, Praia do Espelho, Trancoso, Vale Verde, e outros. Lajes do Engenheiro, em Vale Verde – Porto Seguro (BA). Lajes com Técnica! Quem é responsável assina!"/>
     <meta name="keywords" content= "Lajes; treliças, cura úmida, engenheiro, concreto, pisos, elementos vazados, mourões, vigas, concreto, artefatos de concreto, lajes unidirecionais, lajes bidirecionais, guia para jardim, intertravado pingadeira, pisograma, decor raquete, sextavada estriada, elemento vazado veneziana, autotravante 3 pontas, paviess autotravante trabalhada, CREA- MG 44.879/D, ABNT, 	lajes com técnica, vigotas, orçamento, construção, material para construção, reforma, Vale Verde, Porto Seguro, Bahia, Sul da Bahia, Arraial d’Ajuda, Trancoso, Eunápolis, Sapirara, Caraíva"/>
@@ -20,7 +20,7 @@
                 <div class="menuBar">
                     <ul>
                         <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
-                        <li><a href="produtos.html" title="Coheça Nossos Produtos">Produtos</a></li>
+                        <li><div onclick="subMenuProducts()" onmousemove ="linkHoverInside()" onmouseleave="linkHoverOutside()" id="linkProducts" title="Coheça Nossos Produtos" >Produtos</div></li>
                         <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos" class="active">Projetos</a></li>
                         <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
                     </ul>
@@ -33,11 +33,32 @@
                     <div class="linksMobile">
                         <ul>
                             <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
-                            <li><a href="produtos.html" title="Coheça Nossos Produtos">Produtos</a></li>
-                            <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos" class="active">Projetos</a></li>
+                            <li><a href="produtos.html" title="Coheça Nossos Produtos" class="active">Produtos</a></li>
+                            <li>
+                                <div id="menuProductsMobile">
+                                    <ul>
+                                        <li class="gridLink1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
+                                        <li class="gridLink2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
+                                        <li class="gridLink3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
+                                        <li class="gridLink4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
+                                        <li class="gridLink5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                                    </ul>
+                                </div> 
+                            </li>
+                            <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos">Projetos</a></li>
                             <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
                         </ul>
                     </div>
+                </div>
+                <div id="menuProducts">
+                    <ul>
+                        <li class="gridLink1" onclick="subMenuProducts()"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li>
+                        <li class="gridLink2" onclick="subMenuProducts()"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li>
+                        <li class="gridLink3" onclick="subMenuProducts()"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li>
+                        <li class="gridLink4" onclick="subMenuProducts()"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li>
+                        <li class="gridLink5" onclick="subMenuProducts()"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                        <li class="gridLinkX" onclick="subMenuProducts()" title="Fechar">X</li>
+                    </ul>
                 </div>
             </nav>
         </div>        
@@ -151,6 +172,6 @@
             </ul>
         </div>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/menu.js"></script>
 </body>
 </html>

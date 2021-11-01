@@ -20,7 +20,7 @@
                 <div class="menuBar">
                     <ul>
                         <li><a href="home.html" title="Conheça a Lajes do Engenheiro" class="active">Home</a></li>
-                        <li><a href="produtos.html" title="Coheça Nossos Produtos">Produtos</a></li>
+                        <li><div onclick="subMenuProducts()" onmousemove ="linkHoverInside()" onmouseleave="linkHoverOutside()" id="linkProducts" title="Coheça Nossos Produtos" >Produtos</div></li>
                         <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos">Projetos</a></li>
                         <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
                     </ul>
@@ -32,15 +32,36 @@
                     </div>
                     <div class="linksMobile">
                         <ul>
-                            <li><a href="home.html" title="Conheça a Lajes do Engenheiro" class="active">Home</a></li>
-                            <li><a href="produtos.html" title="Coheça Nossos Produtos">Produtos</a></li>
+                            <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
+                            <li><a href="produtos.html" title="Coheça Nossos Produtos" class="active">Produtos</a></li>
+                            <li>
+                                <div id="menuProductsMobile">
+                                    <ul>
+                                        <li class="gridLink1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
+                                        <li class="gridLink2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
+                                        <li class="gridLink3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
+                                        <li class="gridLink4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
+                                        <li class="gridLink5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                                    </ul>
+                                </div> 
+                            </li>
                             <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos">Projetos</a></li>
                             <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
                         </ul>
                     </div>
                 </div>
+                <div id="menuProducts">
+                    <ul>
+                        <li class="gridLink1" onclick="subMenuProducts()"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li>
+                        <li class="gridLink2" onclick="subMenuProducts()"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li>
+                        <li class="gridLink3" onclick="subMenuProducts()"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li>
+                        <li class="gridLink4" onclick="subMenuProducts()"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li>
+                        <li class="gridLink5" onclick="subMenuProducts()"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                        <li class="gridLinkX" onclick="subMenuProducts()" title="Fechar">X</li>
+                    </ul>
+                </div>
             </nav>
-        </div>        
+        </div>     
     </header>
     <section class="banner area">      
         <div class="sliders_op">
@@ -184,6 +205,7 @@
             </ul>
         </div>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/sliders.js"></script>
 </body>
 </html>

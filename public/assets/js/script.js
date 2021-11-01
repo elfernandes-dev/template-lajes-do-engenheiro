@@ -1,6 +1,5 @@
 const c = (el)=>document.querySelector(el);
 
-//Slider
 let totalSliders_op = document.querySelectorAll('.slider_op--item').length;
 let currentSlider_op = 0;
 c('.slider_op--width').style.width = `calc(100vw * ${totalSliders_op})`;
@@ -30,25 +29,33 @@ setInterval(goNext_op, 5000);
 function format(mask, document){
     let i = document.value.length;
     let exit = mask.substring(0,1);
-    let text = mask.substring(i)
-    
+    let text = mask.substring(i);
     if (text.substring(0,1) != exit){
               document.value += text.substring(0,1);
     }          
-  }
+}
 
-/*
-//Menu Mobile
-function menuMobile() {
-    let lineMenuMobile = document.getElementById("line-menuMobile");
-    let linkMobile = document.getElementById("link_mobile");
-    
-    if(lineMenuMobile.style.display == 'flex' ) {
-        lineMenuMobile.style.display ='none';
-        linkMobile.style.transform = 'rotate(0deg)';
+//Menu Products
+function subMenuProducts() {  
+    let menuProductsArea = document.getElementById("menuProducts");
+    let linkProductsArea = document.getElementById("linkProducts");
+    if(menuProductsArea.style.display == 'block') {
+        menuProductsArea.style.display = 'none';
+        //linkProductsArea.style.color = '#e3e3e3';
+        //linkProductsArea.style.textDecoration = 'none';
     }else {
-        lineMenuMobile.style.display = 'flex';
-        linkMobile.style.transform = 'rotate(90deg)';
+        menuProductsArea.style.display = 'block';
+        //linkProductsArea.style.color = '#92a3bd';
+        //linkProductsArea.style.textDecoration = 'underline';
     }
 }
-*/
+function linkHoverInside() {  
+    let linkProductsArea = document.getElementById("linkProducts");     
+    linkProductsArea.style.color = '#92a3bd';
+    linkProductsArea.style.textDecoration = 'underline'; 
+}
+function linkHoverOutside() {  
+        let linkProductsArea = document.getElementById("linkProducts");     
+        //linkProductsArea.style.color = '#e3e3e3';
+        linkProductsArea.style.textDecoration = 'none';  
+}

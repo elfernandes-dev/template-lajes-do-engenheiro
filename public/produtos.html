@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Evandro Fernandes">
-    <title>Lajes do Engenheiro: Lajes com técnica</title>
+    <title>Lajes do Engenheiro: Conheça nossos produtos</title>
      <link rel="shortcut icon" href="assets/img/ico/favicon.ico"/>
     <meta name="description" content="Conheça com mais detalhes os nossos produtos. Além de lajes temos pisos, placas de concreto, meio-fio, elementos vazados e muito mais.. Lajes do Engenheiro, em Vale Verde – Porto Seguro (BA). Lajes com Técnica! Quem é responsável assina!"/>
     <meta name="keywords" content= "Lajes; treliças, cura úmida, engenheiro, concreto, pisos, elementos vazados, mourões, vigas, concreto, artefatos de concreto, lajes unidirecionais, lajes bidirecionais, guia para jardim, intertravado pingadeira, pisograma, decor raquete, sextavada estriada, elemento vazado veneziana, autotravante 3 pontas, paviess autotravante trabalhada, CREA- MG 44.879/D, ABNT, 	lajes com técnica, vigotas, orçamento, construção, material para construção, reforma, Vale Verde, Porto Seguro, Bahia, Sul da Bahia, Arraial d’Ajuda, Trancoso, Eunápolis, Sapirara, Caraíva"/>
@@ -20,10 +20,10 @@
                 <div class="menuBar">
                     <ul>
                         <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
-                        <li><a href="produtos.html" title="Coheça Nossos Produtos"  class="active">Produtos</a></li>
+                        <li><div onclick="subMenuProducts()" onmousemove ="linkHoverInside()" onmouseleave="linkHoverOutside()" id="linkProducts" title="Coheça Nossos Produtos" class="active">Produtos</div></li>
                         <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos">Projetos</a></li>
                         <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
-                    </ul>
+                    </uld=>
                 </div>
                 <div class="menuMobile">
                     <div class="imgMobile">
@@ -33,20 +33,41 @@
                     <div class="linksMobile">
                         <ul>
                             <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
-                            <li><a href="produtos.html" title="Coheça Nossos Produtos"  class="active">Produtos</a></li>
+                            <li><a href="produtos.html" title="Coheça Nossos Produtos" class="active">Produtos</a></li>
+                            <li>
+                                <div id="menuProductsMobile">
+                                    <ul>
+                                        <li class="gridLink1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
+                                        <li class="gridLink2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
+                                        <li class="gridLink3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
+                                        <li class="gridLink4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
+                                        <li class="gridLink5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                                    </ul>
+                                </div> 
+                            </li>
                             <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos">Projetos</a></li>
                             <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
                         </ul>
                     </div>
                 </div>
+                <div id="menuProducts">
+                    <ul>
+                        <li class="gridLink1" onclick="subMenuProducts()"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li>
+                        <li class="gridLink2" onclick="subMenuProducts()"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li>
+                        <li class="gridLink3" onclick="subMenuProducts()"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li>
+                        <li class="gridLink4" onclick="subMenuProducts()"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li>
+                        <li class="gridLink5" onclick="subMenuProducts()"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                        <li class="gridLinkX" onclick="subMenuProducts()" title="Fechar">X</li>
+                    </ul>
+                </div>
             </nav>
         </div>        
     </header>
-    <section class="defaultLight">
+    <section class="defaultLight" id="lajes">
         <div class="container slabs">
             <div class="gridSlabs">                    
                 <h1>Produtos <em>Lajes do Engenheiro</em></h1>    
-                <h2 id="lajes">Lajes</h2>    
+                <h2>Lajes</h2>    
             </div>
             <div class="gridSlabs1">
                 <h3>Lajes Unidirecionais</h3>
@@ -62,13 +83,14 @@
                 <figcaption title="Laje Bidirecional"><strong>Código:</strong> <em>b1b1b1</em></figcaption>
             </figure>
             </div>
+            <div id="elementos_vazados"></div>
         </div>
     </section> 
 
     <section class="defaultDark">
         <div class="container castElements">
-            <div class="gridCastElements">  
-                <h2 id="elementos_vazados">Elementos Vazados</h2>  
+            <div class="gridCastElements"> 
+                <h2>Elementos Vazados</h2>  
                 <div class="colors">
                     <h3>Cores Disponíveis:</h3> 
                     <div class="colorsDisplay">
@@ -115,13 +137,14 @@
                     <figcaption title="Veneziana"><strong>Código:</strong> <em>y8q8e8</em></figcaption>
                 </figure>
             </div>
+            <div id="placas_concreto"></div>
         </div>
     </section> 
 
     <section class="defaultLight">
         <div class="container castElements">
             <div class="gridCastElements">  
-                <h2 id="placas_concreto">Placas de Concreto</h2>  
+                <h2>Placas de Concreto</h2>  
                 <div class="colors">
                     <h3>Cores Disponíveis:</h3> 
                     <div class="colorsDisplay">
@@ -168,13 +191,14 @@
                     <figcaption title="Outros"><strong>Código:</strong> <em>y8q8e8</em></figcaption>
                 </figure>
             </div>
+            <div id="pisogramas"></div>
         </div>
     </section> 
 
     <section class="defaultDark">
         <div class="container castElements">
-            <div class="gridCastElements">  
-                <h2 id="pisogramas">Pisogramas</h2>  
+            <div class="gridCastElements"> 
+                <h2>Pisogramas</h2>  
                 <div class="colors">
                     <h3>Cores Disponíveis:</h3> 
                     <div class="colorsDisplay">
@@ -221,13 +245,14 @@
                     <figcaption title="Outros"><strong>Código:</strong> <em>y8q8e8</em></figcaption>
                 </figure>
             </div>
+            <div id="pisos_intertravados"></div>
         </div>
     </section> 
 
     <section class="defaultLight">
         <div class="container castElements">
             <div class="gridCastElements">  
-                <h2 id="pisos_intertravados">Pisos intertravados</h2>  
+                <h2>Pisos intertravados</h2>  
                 <div class="colors">
                     <h3>Cores Disponíveis:</h3> 
                     <div class="colorsDisplay">
@@ -308,6 +333,6 @@
             </ul>
         </div>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/menu_products.js"></script>
 </body>
 </html>
