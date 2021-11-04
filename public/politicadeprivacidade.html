@@ -26,22 +26,23 @@
                     </ul>
                 </div>
                 <div class="menuMobile">
-                    <div class="imgMobile">
+                    <div class="imgMobile" onclick="subMenuMobile()">
                         <img src="assets/img/ico/menu_mobile.png" id="display"/>
                         <h1 id="close">X</h1>
                     </div>
-                    <div class="linksMobile">
+                    <div id="linksMobile">
                         <ul>
                             <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
-                            <li><a href="produtos.html" title="Coheça Nossos Produtos" class="active">Produtos</a></li>
+                            <li><div onclick="subMenuLinksProducts()"  id="subLinksProducts" title="Conheça Nossos Produtos">Produtos</div></li>
                             <li>
                                 <div id="menuProductsMobile">
                                     <ul>
-                                        <li class="gridLink1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
-                                        <li class="gridLink2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
-                                        <li class="gridLink3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
-                                        <li class="gridLink4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
-                                        <li class="gridLink5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                                        <li id="downArrow"></li>
+                                        <li class="link1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
+                                        <li class="link2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
+                                        <li class="link3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
+                                        <li class="link4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
+                                        <li class="link5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
                                     </ul>
                                 </div> 
                             </li>

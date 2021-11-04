@@ -49,7 +49,6 @@ if($name && $email && $ddd && $cel && $subject && $message && $secrecy)
      <link rel="shortcut icon" href="assets/img/ico/favicon.ico"/>
     <meta name="description" content="Entre em contato ou preencha o formulário para mais informações. Lajes do Engenheiro, em Vale Verde – Porto Seguro (BA). Lajes com Técnica! Quem é responsável assina!"/>
     <meta name="keywords" content= "Lajes; treliças, cura úmida, engenheiro, concreto, pisos, elementos vazados, mourões, vigas, concreto, artefatos de concreto, lajes unidirecionais, lajes bidirecionais, guia para jardim, intertravado pingadeira, pisograma, decor raquete, sextavada estriada, elemento vazado veneziana, autotravante 3 pontas, paviess autotravante trabalhada, CREA- MG 44.879/D, ABNT, 	lajes com técnica, vigotas, orçamento, construção, material para construção, reforma, Vale Verde, Porto Seguro, Bahia, Sul da Bahia, Arraial d’Ajuda, Trancoso, Eunápolis, Sapirara, Caraíva"/>
-    <link href="assets/css/normalize.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 <body>
@@ -66,27 +65,28 @@ if($name && $email && $ddd && $cel && $subject && $message && $secrecy)
                     </ul>
                 </div>
                 <div class="menuMobile">
-                    <div class="imgMobile">
+                    <div class="imgMobile" onclick="subMenuMobile()">
                         <img src="assets/img/ico/menu_mobile.png" id="display"/>
                         <h1 id="close">X</h1>
                     </div>
-                    <div class="linksMobile">
+                    <div id="linksMobile">
                         <ul>
                             <li><a href="home.html" title="Conheça a Lajes do Engenheiro">Home</a></li>
-                            <li><a href="produtos.html" title="Coheça Nossos Produtos" class="active">Produtos</a></li>
+                            <li><div onclick="subMenuLinksProducts()"  id="subLinksProducts" title="Conheça Nossos Produtos">Produtos</div></li>
                             <li>
                                 <div id="menuProductsMobile">
                                     <ul>
-                                        <li class="gridLink1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
-                                        <li class="gridLink2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
-                                        <li class="gridLink3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
-                                        <li class="gridLink4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
-                                        <li class="gridLink5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
+                                        <li id="downArrow"></li>
+                                        <li class="link1"><a href="produtos.html%20#lajes"><em>Lajes</em></a></li><hr/>
+                                        <li class="link2"><a href="produtos.html%20#elementos_vazados"><em>Elementos Vazados</em></a></li><hr/>
+                                        <li class="link3"><a href="produtos.html%20#placas_concreto"><em>Placas de Concreto</em></a></li><hr/>
+                                        <li class="link4"><a href="produtos.html%20#pisogramas"><em>Pisogramas</em></a></li><hr/>
+                                        <li class="link5"><a href="produtos.html%20#pisos_intertravados"><em>Pisos Intertravados</em></a></li>
                                     </ul>
                                 </div> 
                             </li>
                             <li><a href="projetos.html" title="Conheça Alguns de Nossos Projetos">Projetos</a></li>
-                            <li><a href="contato.php" title="Entre em Contato Conosco">Contato</a></li>
+                            <li><a href="contato.php" title="Entre em Contato Conosco" class="active">Contato</a></li>
                         </ul>
                     </div>
                 </div>
